@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "digital-ledgers-by-building-a-blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add-block.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm": "^10.2.4"
+  }
+}
