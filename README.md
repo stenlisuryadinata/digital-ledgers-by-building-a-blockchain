@@ -5,10 +5,19 @@ This project provides a simple implementation of a blockchain and related functi
 ## Getting Started
 
 ### Clone the Repository:
+
 ```
 bash
 git clone https://github.com/your-username/digital-ledgers-by-building-a-blockchain.git
 cd digital-ledgers-by-building-a-blockchain
+```
+
+### Install Node Modules:
+
+Install the required Node.js modules using npm.
+```
+bash
+npm install
 ```
 
 ### Run the Project:
