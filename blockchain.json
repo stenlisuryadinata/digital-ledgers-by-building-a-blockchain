@@ -12,5 +12,16 @@
     "hash": "0.2335870786955354",
     "previousHash": "0.28711305289302613",
     "transactions": []
+  },
+  {
+    "hash": "0.2437656447646872",
+    "previousHash": "0.2335870786955354",
+    "transactions": [
+      {
+        "fromAddress": "You",
+        "toAddress": "Me",
+        "amount": 5
+      }
+    ]
   }
 ]
