@@ -4,56 +4,54 @@
     "previousHash": null
   },
   {
-    "hash": "0.28711305289302613",
+    "hash": "004aeef7932d04399370cb191df97b26f9590187026d5305ce58ec0aa5d3c767",
     "previousHash": "0",
-    "transactions": []
-  },
-  {
-    "hash": "0.2335870786955354",
-    "previousHash": "0.28711305289302613",
-    "transactions": []
-  },
-  {
-    "hash": "0.2437656447646872",
-    "previousHash": "0.2335870786955354",
-    "transactions": [
-      {
-        "fromAddress": "You",
-        "toAddress": "Me",
-        "amount": 5
-      }
-    ]
-  },
-  {
-    "hash": "0.9718272244859227",
-    "previousHash": "0.2437656447646872",
-    "transactions": []
-  },
-  {
-    "hash": "84b60c4389db94da53c70a6c1d783edd59c95ffff0728e99ba15b7cf75ad2a6d",
-    "previousHash": "0.9718272244859227",
     "transactions": [
       {
         "fromAddress": "You",
         "toAddress": "Me",
         "amount": 12
-      }
-    ]
-  },
-  {
-    "hash": "b4df33b4dd47ef6255d6ceaa73dea0eaecc25fdfed87c12e50e8e26718aafb83",
-    "previousHash": "84b60c4389db94da53c70a6c1d783edd59c95ffff0728e99ba15b7cf75ad2a6d",
-    "transactions": [
+      },
       {
         "fromAddress": "You",
         "toAddress": "Me",
-        "amount": 24
+        "amount": 16
       }
-    ]
+    ],
+    "nonce": 1191
   },
   {
-    "hash": "027e9e248d579787225f9a46a0e3ca2dd8b7ad051a5b2c8c7bf3a7d1507aa93a",
-    "previousHash": "b4df33b4dd47ef6255d6ceaa73dea0eaecc25fdfed87c12e50e8e26718aafb83",
-    "transactions": []
+    "hash": "0084767ff234c44bf26a9a822312cf4ff2916356d403ed6de308a676d3def740",
+    "previousHash": "004aeef7932d04399370cb191df97b26f9590187026d5305ce58ec0aa5d3c767",
+    "transactions": [
+      {
+        "fromAddress": null,
+        "toAddress": "Me",
+        "amount": 50
+      },
+      {
+        "fromAddress": "You",
+        "toAddress": "Me",
+        "amount": 20
+      }
+    ],
+    "nonce": 292
+  },
+  {
+    "hash": "0073ae63ea27747fe8c0555fcbc3c4646e5e0cd226b29109c25542674dedde12",
+    "previousHash": "0084767ff234c44bf26a9a822312cf4ff2916356d403ed6de308a676d3def740",
+    "transactions": [
+      {
+        "fromAddress": null,
+        "toAddress": "Me",
+        "amount": 50
+      },
+      {
+        "fromAddress": "You",
+        "toAddress": "Me",
+        "amount": 10
+      }
+    ],
+    "nonce": 135
   }
 ]

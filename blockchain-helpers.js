@@ -1,3 +1,5 @@
+import sha256 from 'crypto-js/sha256.js'; 
+//you need to make it so your blockchain validates all the hash values and import the sha256 function at the top of the file like you did in your mine-block.js file.
 import { writeFileSync, readFileSync } from 'fs';
 
 export function writeBlockchain(blockchain) {
@@ -14,13 +16,19 @@ export function getBlockchain() {
 export function isValidChain() {
   const blockchain = getBlockchain();
 
+  // loop through blocks
   for (let i = 1; i < blockchain.length; i++) {
     const previousBlock = blockchain[i - 1];
-    const { previousHash } = blockchain[i];
+    //destruct nonce from blockchain[i] in your for loop
+    //destruct hash from blockchain[i] in your for loop
+    //destruct transactions from blockchain[i] in your for loop
+    const { previousHash, nonce, hash, transactions } = blockchain[i];
 
+    // validate previous hash
     if (previousHash !== previousBlock.hash) {
       return false;
     }
+    // validate block hash 
   }
 
   return true;

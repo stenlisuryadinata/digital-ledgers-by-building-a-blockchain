@@ -13,3 +13,5 @@ const newTransaction = {
 const transactions = getTransactions();
 transactions.push(newTransaction);
 writeTransactions(transactions);
+
+//You should run node add-transaction.js You Me 12 in the terminal
