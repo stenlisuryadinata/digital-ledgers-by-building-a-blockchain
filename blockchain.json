@@ -50,5 +50,10 @@
         "amount": 24
       }
     ]
+  },
+  {
+    "hash": "027e9e248d579787225f9a46a0e3ca2dd8b7ad051a5b2c8c7bf3a7d1507aa93a",
+    "previousHash": "b4df33b4dd47ef6255d6ceaa73dea0eaecc25fdfed87c12e50e8e26718aafb83",
+    "transactions": []
   }
 ]
