@@ -29,6 +29,11 @@ export function isValidChain() {
       return false;
     }
     // validate block hash 
+    const testBlockHash = sha256(nonce + previousBlock.hash + JSON.stringify(transactions)).toString();
+    if (hash != testBlockHash) { 
+        return false; //If the hashes don't match, return false.
+        
+    } //if condition that checks if the hash of the current block is not equal (!=) to the recreated hash.
   }
 
   return true;
