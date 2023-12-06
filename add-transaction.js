@@ -9,6 +9,7 @@ const hash = sha256(fromAddress + toAddress + amount).toString();
 //create a const hash variable that creates a hash using a concatenation of the fromAddress, toAddress, and amount. Here's a reminder of the syntax: sha256(<content>).toString();.
 
 const newTransaction = {
+  hash,
   fromAddress,
   toAddress,
   amount
