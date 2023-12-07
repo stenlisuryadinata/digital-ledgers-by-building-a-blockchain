@@ -1,5 +1,5 @@
 import sha256 from 'crypto-js/sha256.js';
-import { writeTransactions, getTransactions } from './blockchain-helpers.js';
+import { writeTransactions, getTransactions, getAddressBalance } from './blockchain-helpers.js';
 
 const fromAddress = process.argv[2];
 const toAddress = process.argv[3];
@@ -16,7 +16,13 @@ const newTransaction = {
 }
 
 const transactions = getTransactions();
-transactions.push(newTransaction);
-writeTransactions(transactions);
+const addressBalance = getAddressBalance(fromAddress);
+//add an if statement that checks if the balance is greater than or equal to the amount they are trying to send. 
+if (addressBalance >= amount) {
+    transactions.push(newTransaction);
+    writeTransactions(transactions);
+  } else { console.log('You do not have enough funds to make that transaction'); }
+// transactions.push(newTransaction);
+// writeTransactions(transactions);
 
 //You should run node add-transaction.js You Me 12 in the terminal
