@@ -1,4 +1,4 @@
-import { getBlockchain, writeBlockchain, getTransactions, writeTransactions } from './blockchain-helpers.js';
+import { getBlockchain, writeBlockchain, getTransactions, writeTransactions, getWalletAddressFromName} from './blockchain-helpers.js';
 import sha256 from 'crypto-js/sha256.js';
 
 const blockchain = getBlockchain();
@@ -42,11 +42,14 @@ const newBlock = {
   nonce: nonce
   
 }
+
+const rewardAddress = getWalletAddressFromName('Me');
 //Because proof of work takes a lot of resources to find the nonce, the person that finds it is rewarded
 const rewardTransaction = {
   //The reward transaction will add new tokens to your blockchain and won't have a sender
   fromAddress: null,
-  toAddress: 'Me',
+  //toAddress: 'Me',
+  toAddress: rewardAddress,
   amount: 50
 }
 
@@ -54,3 +57,6 @@ blockchain.push(newBlock);
 writeBlockchain(blockchain);
 writeTransactions([rewardTransaction]);
 //Change where you write the transactions.json file so it writes an array with your reward transaction as the only item.
+
+
+//You should run node mine-block.js in the terminal

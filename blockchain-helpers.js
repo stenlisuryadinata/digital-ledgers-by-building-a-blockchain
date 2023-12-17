@@ -1,6 +1,9 @@
 import sha256 from 'crypto-js/sha256.js'; 
 //you need to make it so your blockchain validates all the hash values and import the sha256 function at the top of the file like you did in your mine-block.js file.
 import { writeFileSync, readFileSync } from 'fs';
+import EC from 'elliptic';
+
+const ec = new EC.ec('p192');
 
 export function writeBlockchain(blockchain) {
   const blockchainString = JSON.stringify(blockchain, null, 2);
@@ -36,7 +39,7 @@ export function isValidChain() {
     } //if condition that checks if the hash of the current block is not equal (!=) to the recreated hash.
      // loop through transactions
      for (let j = 0; j < transactions.length; j++) { 
-        const { fromAddress, toAddress, amount, hash } = transactions[j];
+        const { fromAddress, toAddress, amount, hash, signature } = transactions[j];
         // don't validate reward transactions
         if (fromAddress != null) { 
             // validate transaction hash
@@ -44,6 +47,11 @@ export function isValidChain() {
             if (hash != testTransactionHash) { 
                 return false; //If the hashes don't match, return false.
             } //If the hashes don't match, return false.
+
+            // validate signature
+            const publicKeyPair = ec.keyFromPublic(fromAddress, 'hex');
+            const verifiedSignature = publicKeyPair.verify(hash, signature);
+            if (!verifiedSignature) { return false; } //If the signature is not verified, return false.
         } //If the fromAddress is not null, you want to validate the transaction.
 
      }
@@ -88,4 +96,13 @@ export function getAddressBalance(address) {
     }
     return balance;
       
+    }
+
+    //Imagine these two wallets as not yours. You will be able to send transactions to their addresses, but not from them since you don't know their private keys. Next, you will make it easier to work with these addresses.
+
+
+    export function getWalletAddressFromName(name) {
+      const walletsFile = readFileSync('./wallets.json'); 
+      const wallets = JSON.parse(walletsFile);
+      return wallets[name];
     }
